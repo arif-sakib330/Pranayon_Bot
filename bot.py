@@ -11,9 +11,18 @@ import json
 import os
 import hashlib
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
-ADMIN_ID = int(os.environ.get("ADMIN_ID"))
-ALLOWED_GROUP_ID = int(os.environ.get("ALLOWED_GROUP_ID"))
+ADMIN_ID = int(os.environ.get("ADMIN_ID", "0"))
+ALLOWED_GROUP_ID = int(os.environ.get("ALLOWED_GROUP_ID", "0"))
+
+# BOT_TOKEN = os.environ.get("BOT_TOKEN")
+# ADMIN_ID = int(os.environ.get("ADMIN_ID"))
+# ALLOWED_GROUP_ID = int(os.environ.get("ALLOWED_GROUP_ID"))
 
 
 FILES_JSON = "files.json"
